@@ -15,9 +15,9 @@ A micro library for naive type checking
 
 |						|				|
 |-----------------------|---------------|
-| Raw					| 6400 bytes	|
-| Uglified				| 3224 bytes	|
-| Uglified + gzipped	| 881 bytes		|
+| Raw					| 1283 bytes	|
+| Uglified				| 681 bytes		|
+| Uglified + gzipped	| 313 bytes		|
 
 ## environment support
 
