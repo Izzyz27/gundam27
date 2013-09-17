@@ -8,6 +8,12 @@ umd = (factory) ->
 	else
 		@is = factory
 
+# helper
+extend = (a, b) ->
+	for key of b
+		a[key] = b[key]
+	a
+
 # type check functions
 iz =
 
@@ -50,17 +56,8 @@ izfn = (thing, type) ->
 		iz[type] thing
 	else
 		undefined
-		
+
 extend izfn, iz
 
 # export!
 umd izfn
-
-# helpers
-
-extend = (a, b) ->
-
-	for key of b
-		a[key] = b[key]
-
-	a
