@@ -1,14 +1,14 @@
-# is
+# izzy
 
 A micro library for naive type checking
 
 ## usage
 
 ```js
-> is.string (someVar)
+> izzy.string (someVar)
 
 // or equivalently
-> is (someVar, 'string')
+> izzy ('string', someVar)
 ```
 
 ## size
@@ -21,4 +21,4 @@ A micro library for naive type checking
 
 ## environment support
 
-Any browser (as `window.is`), AMD, CommonJS, NodeJS
+Any browser (as `window.izzy`), AMD, CommonJS, NodeJS

@@ -1,10 +1,10 @@
 {
-	"name": "is",
+	"name": "izzy",
 	"version": "0.1.0",
 	"description": "A micro library for naive type checking",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/eighttrackmind/is.git"
+		"url": "https://github.com/eighttrackmind/izzy.git"
 	},
 	"author": "Boris Cherny <boris@performancejs.com>",
 	"contributors": [
@@ -26,6 +26,7 @@
 		"test": "./node_modules/.bin/nodeunit test"
 	},
 	"keywords": [
+		"is",
 		"type",
 		"typeof",
 		"type check",

@@ -6,7 +6,7 @@ umd = (factory) ->
 	else if typeof define is 'function' and define.amd
 		define([], factory)
 	else
-		@is = factory
+		@izzy = factory
 
 # helper
 extend = (a, b) ->
@@ -15,11 +15,11 @@ extend = (a, b) ->
 	a
 
 # type check functions
-iz =
+izzy =
 
 	array: (thing) ->
 
-		not iz.string(thing) and not iz.number(thing) and iz.object(thing) and iz.defined(thing.length)
+		not izzy.string(thing) and not izzy.number(thing) and izzy.object(thing) and izzy.defined(thing.length)
 
 	boolean: (thing) ->
 
@@ -50,14 +50,14 @@ iz =
 		typeof thing is 'string'
 
 # accept both dot and argument notation
-izfn = (thing, type) ->
+izzyFn = (type, thing) ->
 
-	if iz.defined iz[type]
-		iz[type] thing
+	if izzy.defined izzy[type]
+		izzy[type] thing
 	else
 		undefined
 
-extend izfn, iz
+extend izzyFn, izzy
 
 # export!
-umd izfn
+umd izzyFn
