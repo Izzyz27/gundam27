@@ -5,11 +5,17 @@ A micro library for naive type checking
 ## usage
 
 ```js
-> izzy.string (someVar)
+> izzy.string ('foo')
+// > true
 
-// or equivalently
-> izzy ('string', someVar)
+// or, equivalently:
+> izzy ('string', 42)
+// > false
 ```
+
+## supported checks
+
+array, boolean, defined, function, null, number, object, string
 
 ## size
 
