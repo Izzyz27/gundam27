@@ -1,6 +1,6 @@
 {
   "name": "izzy",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A micro library for naive type checking",
   "repository": {
     "type": "git",

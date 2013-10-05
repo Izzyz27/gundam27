@@ -5,7 +5,9 @@
     if (typeof exports === 'object') {
       return module.exports = factory;
     } else if (typeof define === 'function' && define.amd) {
-      return define([], factory);
+      return define([], function() {
+        return factory;
+      });
     } else {
       return this.izzy = factory;
     }
