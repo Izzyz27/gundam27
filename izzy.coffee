@@ -1,13 +1,3 @@
-
-# UMD (play nice with AMD, CommonJS, globals)
-umd = (factory) ->
-	if typeof exports is 'object'
-		module.exports = factory
-	else if typeof define is 'function' and define.amd
-		define 'izzy', -> factory
-	else
-		@izzy = factory
-
 # helper
 extend = (a, b) ->
 	for key of b
@@ -15,7 +5,7 @@ extend = (a, b) ->
 	a
 
 # type check functions
-izzy =
+types =
 
 	array: (thing) ->
 
@@ -50,14 +40,11 @@ izzy =
 		typeof thing is 'string'
 
 # accept both dot and argument notation
-izzyFn = (type, thing) ->
+izzy = (type, thing) ->
 
-	if izzy.defined izzy[type]
-		izzy[type] thing
+	if types.defined types[type]
+		types[type] thing
 	else
 		undefined
 
-extend izzyFn, izzy
-
-# export!
-umd izzyFn
+extend izzy, types

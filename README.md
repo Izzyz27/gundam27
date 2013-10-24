@@ -2,6 +2,9 @@
 
 A micro library for naive type checking
 
+[![Build Status](https://travis-ci.org/eighttrackmind/izzy.png)](https://travis-ci.org/eighttrackmind/izzy.png)
+[![browser support](https://ci.testling.com/eighttrackmind/izzy.png)](https://ci.testling.com/eighttrackmind/izzy)
+
 ## usage
 
 ```js
@@ -27,4 +30,11 @@ array, boolean, defined, function, null, number, object, string
 
 ## environment support
 
-Any browser (as `window.izzy`), AMD, CommonJS, NodeJS
+Any browser (as `window.izzy` if you're not using a module loader), AMD, CommonJS, NodeJS
+
+## building it yourself
+
+```bash
+npm install
+grunt
+```
