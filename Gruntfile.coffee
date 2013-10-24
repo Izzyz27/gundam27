@@ -14,6 +14,9 @@ module.exports = (grunt) ->
 			options:
 				bare: true
 
+		nodeunit:
+			all: ['test/test.js']
+
 		uglify:
 			options:
 				mangle:
@@ -45,8 +48,9 @@ module.exports = (grunt) ->
 
 	# load tasks
 	grunt.loadNpmTasks 'grunt-contrib-coffee'
+	grunt.loadNpmTasks 'grunt-contrib-nodeunit'
 	grunt.loadNpmTasks 'grunt-contrib-uglify'
 	grunt.loadNpmTasks 'grunt-umd'
 
 	# register tasks
-	grunt.registerTask 'default', ['coffee', 'umd', 'uglify']
+	grunt.registerTask 'default', ['coffee', 'umd', 'nodeunit', 'uglify']
