@@ -8,13 +8,13 @@ izzy = require('../izzy');
 subjects = {
   array: [[], new Array()],
   boolean: [true, false],
-  undefined: [void 0],
   "function": [(function() {}), new Function()],
   nan: [NaN],
   "null": [null],
   number: [42, new Number(42)],
   object: [{}, new Object()],
-  string: ['bar', new String('bar')]
+  string: ['bar', new String('bar')],
+  undefined: [void 0]
 };
 
 _.each(subjects, function(cases, type) {

@@ -5,13 +5,13 @@ izzy = require '../izzy'
 subjects =
 	array: [[], new Array()]
 	boolean: [true, false]
-	undefined: [undefined]
 	function: [(->), new Function()]
 	nan: [NaN]
 	null: [null]
 	number: [42, new Number(42)]
 	object: [{}, new Object()]
 	string: ['bar', new String('bar')]
+	undefined: [undefined]
 
 _.each subjects, (cases, type) ->
 
