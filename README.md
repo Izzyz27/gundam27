@@ -18,7 +18,7 @@ A micro library for type checking. Defers to constructs' internal `[[Class]]` pr
 
 ## supported checks
 
-array, boolean, defined, element, function, nan, null, number, object, string
+array, boolean, undefined, element, function, nan, null, number, object, string
 
 ## size
 

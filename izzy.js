@@ -30,8 +30,8 @@ types = {
   boolean: function(thing) {
     return (toString(thing)) === '[object Boolean]';
   },
-  defined: function(thing) {
-    return (toString(thing)) !== '[object Undefined]';
+  undefined: function(thing) {
+    return (toString(thing)) === '[object Undefined]';
   },
   element: function(thing) {
     return ((toString(thing)).indexOf('HTML')) > -1;
@@ -57,7 +57,7 @@ types = {
 };
 
 izzy = function(type, thing) {
-  if (types.defined(types[type])) {
+  if (!types.undefined(types[type])) {
     return types[type](thing);
   } else {
     return void 0;

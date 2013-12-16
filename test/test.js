@@ -8,7 +8,7 @@ izzy = require('../izzy');
 subjects = {
   array: [[], new Array()],
   boolean: [true, false],
-  defined: [!void 0],
+  undefined: [void 0],
   "function": [(function() {}), new Function()],
   nan: [NaN],
   "null": [null],
@@ -21,7 +21,13 @@ _.each(subjects, function(cases, type) {
   return exports[type] = function(test) {
     _.each(cases, function(thing) {
       test.strictEqual(izzy[type](thing), true);
-      return test.strictEqual(izzy(type, thing), true);
+      test.strictEqual(izzy(type, thing), true);
+      return _.each(_.omit(subjects, type), function(_cases, _type) {
+        return _.each(_cases, function(_thing) {
+          test.strictEqual(izzy[type](_thing), false);
+          return test.strictEqual(izzy(type, _thing), false);
+        });
+      });
     });
     return test.done();
   };

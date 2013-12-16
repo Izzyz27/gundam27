@@ -5,7 +5,7 @@ izzy = require '../izzy'
 subjects =
 	array: [[], new Array()]
 	boolean: [true, false]
-	defined: [!undefined]
+	undefined: [undefined]
 	function: [(->), new Function()]
 	nan: [NaN]
 	null: [null]
@@ -18,7 +18,18 @@ _.each subjects, (cases, type) ->
 	exports[type] = (test) ->
 
 		_.each cases, (thing) ->
+
+			# test for proper type detection
 			test.strictEqual izzy[type](thing), true
 			test.strictEqual izzy(type, thing), true
+
+			# test for false positives
+			_.each (_.omit subjects, type), (_cases, _type) ->
+				_.each _cases, (_thing) ->
+
+					test.strictEqual izzy[type](_thing), false
+					test.strictEqual izzy(type, _thing), false
+
+
 
 		do test.done

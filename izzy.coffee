@@ -18,9 +18,9 @@ types =
 
 		(toString thing) is '[object Boolean]'
 
-	defined: (thing) ->
+	undefined: (thing) ->
 
-		(toString thing) isnt '[object Undefined]'
+		(toString thing) is '[object Undefined]'
 
 	element: (thing) ->
 
@@ -53,7 +53,7 @@ types =
 # accept both dot and argument notation
 izzy = (type, thing) ->
 
-	if types.defined types[type]
+	if not types.undefined types[type]
 		types[type] thing
 	else
 		undefined
