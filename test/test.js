@@ -5,12 +5,10 @@ _ = require('lodash');
 
 izzy = require('../izzy');
 
-console.log('zyy', izzy);
-
 subjects = {
   array: [[], new Array()],
   boolean: [true, false],
-  defined: [void 0],
+  defined: [!void 0],
   "function": [(function() {}), new Function()],
   nan: [NaN],
   "null": [null],

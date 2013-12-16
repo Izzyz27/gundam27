@@ -25,28 +25,34 @@ toString = function(thing) {
 
 types = {
   array: function(thing) {
-    return !izzy.string(thing) && !izzy.number(thing) && izzy.object(thing) && izzy.defined(thing.length);
+    return (toString(thing)) === '[object Array]';
   },
   boolean: function(thing) {
-    return typeof thing === 'boolean';
+    return (toString(thing)) === '[object Boolean]';
   },
   defined: function(thing) {
-    return thing !== void 0;
+    return (toString(thing)) !== '[object Undefined]';
+  },
+  element: function(thing) {
+    return ((toString(thing)).indexOf('HTML')) > -1;
   },
   "function": function(thing) {
-    return typeof thing === 'function';
+    return (toString(thing)) === '[object Function]';
+  },
+  nan: function(thing) {
+    return thing !== thing;
   },
   "null": function(thing) {
-    return thing === null;
+    return (toString(thing)) === '[object Null]';
   },
   number: function(thing) {
-    return typeof thing === 'number';
+    return (toString(thing)) === '[object Number]' && !izzy.nan(thing);
   },
   object: function(thing) {
-    return typeof thing === 'object';
+    return (toString(thing)) === '[object Object]';
   },
   string: function(thing) {
-    return typeof thing === 'string';
+    return (toString(thing)) === '[object String]';
   }
 };
 

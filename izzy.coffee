@@ -12,35 +12,43 @@ types =
 
 	array: (thing) ->
 
-		not izzy.string(thing) and not izzy.number(thing) and izzy.object(thing) and izzy.defined(thing.length)
+		(toString thing) is '[object Array]'
 
 	boolean: (thing) ->
 
-		typeof thing is 'boolean'
+		(toString thing) is '[object Boolean]'
 
 	defined: (thing) ->
 
-		thing isnt undefined
+		(toString thing) isnt '[object Undefined]'
+
+	element: (thing) ->
+
+		((toString thing).indexOf 'HTML') > -1
 
 	function: (thing) ->
 
-		typeof thing is 'function'
+		(toString thing) is '[object Function]'
+
+	nan: (thing) ->
+
+		thing isnt thing
 
 	null: (thing) ->
 
-		thing is null
+		(toString thing) is '[object Null]'
 
 	number: (thing) ->
 
-		typeof thing is 'number'
+		(toString thing) is '[object Number]' and not izzy.nan thing
 
 	object: (thing) ->
 
-		typeof thing is 'object'
+		(toString thing) is '[object Object]'
 
 	string: (thing) ->
 
-		typeof thing is 'string'
+		(toString thing) is '[object String]'
 
 # accept both dot and argument notation
 izzy = (type, thing) ->

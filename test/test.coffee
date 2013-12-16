@@ -2,12 +2,10 @@
 _ = require 'lodash'
 izzy = require '../izzy'
 
-console.log 'zyy', izzy
-
 subjects =
 	array: [[], new Array()]
 	boolean: [true, false]
-	defined: [undefined]
+	defined: [!undefined]
 	function: [(->), new Function()]
 	nan: [NaN]
 	null: [null]
