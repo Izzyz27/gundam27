@@ -8,6 +8,10 @@ module.exports = (grunt) ->
 
 		pkg: pkg
 
+		bytesize:
+			all:
+				src: []
+
 		coffee:
 			compile:
 				files: {}
@@ -33,6 +37,7 @@ module.exports = (grunt) ->
 			all: {}
 
 	# configure coffee, uglify, umd
+	config.bytesize.all.src = [name + '.js', name + '.min.js']
 	config.coffee.compile.files[name + '.js'] = name + '.coffee'
 	config.uglify.standard.files[name + '.min.js'] = [name + '.js']
 	config.umd.all =
@@ -47,10 +52,11 @@ module.exports = (grunt) ->
 	grunt.config.init config
 
 	# load tasks
+	grunt.loadNpmTasks 'grunt-bytesize'
 	grunt.loadNpmTasks 'grunt-contrib-coffee'
 	grunt.loadNpmTasks 'grunt-contrib-nodeunit'
 	grunt.loadNpmTasks 'grunt-contrib-uglify'
 	grunt.loadNpmTasks 'grunt-umd'
 
 	# register tasks
-	grunt.registerTask 'default', ['coffee', 'umd', 'nodeunit', 'uglify']
+	grunt.registerTask 'default', ['coffee', 'umd', 'nodeunit', 'uglify', 'bytesize']
