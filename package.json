@@ -1,7 +1,7 @@
 {
   "name": "izzy",
   "version": "1.0.0",
-  "description": "A micro library for naive type checking",
+  "description": "A robust micro library for type checking. Defers to constructs' internal `[[Class]]` property rather than duck typing for excellent type detection and to avoid triggering false positives.",
   "repository": {
     "type": "git",
     "url": "https://github.com/eighttrackmind/izzy.git"
@@ -39,7 +39,10 @@
     "array",
     "object",
     "boolean",
-    "primitive"
+    "primitive",
+    "element",
+    "class",
+    "duck"
   ],
   "testling": {
     "files": "test/test.js",

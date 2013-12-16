@@ -1,6 +1,6 @@
 # izzy
 
-A micro library for type checking. Defers to constructs' internal `[[Class]]` property rather than duck typing.
+A robust micro library for type checking. Defers to constructs' internal `[[Class]]` property rather than duck typing for excellent type detection and to avoid triggering false positives.
 
 [![Build Status](https://travis-ci.org/eighttrackmind/izzy.png)](https://travis-ci.org/eighttrackmind/izzy.png)
 [![browser support](https://ci.testling.com/eighttrackmind/izzy.png)](https://ci.testling.com/eighttrackmind/izzy)
@@ -8,12 +8,11 @@ A micro library for type checking. Defers to constructs' internal `[[Class]]` pr
 ## usage
 
 ```js
-> izzy.string ('foo')
-// > true
+izzy.string ('foo') // true
+izzy.string (new String('foo')) // true
 
-// or, equivalently:
-> izzy ('string', 42)
-// > false
+izzy ('string', 'foo') // true
+izzy ('string', 42) // false
 ```
 
 ## supported checks
