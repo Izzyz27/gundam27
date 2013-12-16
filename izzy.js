@@ -9,7 +9,7 @@
         root.izzy = factory();
     }
 }(this, function() {
-var extend, izzy, types;
+var extend, izzy, toString, types;
 
 extend = function(a, b) {
   var key;
@@ -17,6 +17,10 @@ extend = function(a, b) {
     a[key] = b[key];
   }
   return a;
+};
+
+toString = function(thing) {
+  return {}.toString.call(thing);
 };
 
 types = {

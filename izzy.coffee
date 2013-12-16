@@ -1,8 +1,11 @@
-# helper
+# helpers
 extend = (a, b) ->
 	for key of b
 		a[key] = b[key]
 	a
+
+toString = (thing) ->
+	({}).toString.call thing
 
 # type check functions
 types =

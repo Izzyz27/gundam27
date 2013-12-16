@@ -19,7 +19,8 @@
     "grunt-contrib-coffee": "~0.7.0",
     "nodeunit": "~0.8.1",
     "grunt-umd": "~1.3.0",
-    "grunt-contrib-nodeunit": "~0.2.2"
+    "grunt-contrib-nodeunit": "~0.2.2",
+    "lodash": "~2.4.1"
   },
   "license": "MIT",
   "readmeFilename": "README.md",
