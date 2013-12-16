@@ -23,9 +23,9 @@ array, boolean, undefined, element, function, nan, null, number, object, string
 
 |						|				|
 |-----------------------|---------------|
-| Raw					| 1283 bytes	|
-| Uglified				| 681 bytes		|
-| Uglified + gzipped	| 313 bytes		|
+| Raw					| 1.49 kb		|
+| Uglified				| 843 b			|
+| Uglified + gzipped	| 361 b			|
 
 ## environment support
 
