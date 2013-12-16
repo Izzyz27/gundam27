@@ -1,6 +1,6 @@
 # izzy
 
-A micro library for naive type checking
+A micro library for type checking. Defers to constructs' internal `[[Class]]` property rather than duck typing.
 
 [![Build Status](https://travis-ci.org/eighttrackmind/izzy.png)](https://travis-ci.org/eighttrackmind/izzy.png)
 [![browser support](https://ci.testling.com/eighttrackmind/izzy.png)](https://ci.testling.com/eighttrackmind/izzy)
@@ -18,7 +18,7 @@ A micro library for naive type checking
 
 ## supported checks
 
-array, boolean, defined, function, null, number, object, string
+array, boolean, defined, element, function, nan, null, number, object, string
 
 ## size
 
