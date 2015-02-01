@@ -1,11 +1,12 @@
 {
   "name": "izzy",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A robust micro library for type checking. Defers to constructs' internal `[[Class]]` property rather than duck typing for excellent type detection and to avoid triggering false positives.",
   "repository": {
     "type": "git",
     "url": "https://github.com/eighttrackmind/izzy.git"
   },
+  "main": "izzy.js",
   "author": "Boris Cherny <boris@performancejs.com>",
   "contributors": [
     {
